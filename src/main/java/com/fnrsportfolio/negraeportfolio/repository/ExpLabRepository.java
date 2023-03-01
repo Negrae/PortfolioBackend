@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ExpLabRepository extends JpaRepository<ExpLab, Long> {
-
-    public Optional<ExpLab> findByNombreExp(String nombreExp);
 /*
+    public Optional<ExpLab> findByNombreExp(String nombreExp);
+
     public boolean existByNombreExp(String nombreExp);
 */
 }

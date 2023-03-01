@@ -13,14 +13,14 @@ public class Educacion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
     private String nombreEdu;
     private String descripcionEdu;
 
     public Educacion() {
     }
 
-    public Educacion(int id, String nombreEdu, String descripcionEdu) {
+    public Educacion(Long id, String nombreEdu, String descripcionEdu) {
         this.id = id;
         this.nombreEdu = nombreEdu;
         this.descripcionEdu = descripcionEdu;

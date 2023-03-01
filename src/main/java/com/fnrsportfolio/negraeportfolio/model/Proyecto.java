@@ -1,5 +1,6 @@
 package com.fnrsportfolio.negraeportfolio.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,22 +10,24 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
-public class ExpLab {
+public class Proyecto {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nombreExp;
-    private String descripcionExp;
+    private String nombreProyecto;
+    @Column(columnDefinition = "LONGTEXT")
+    private String descripcionProyecto;
 
-    public ExpLab() {
+    public Proyecto() {
     }
 
-    public ExpLab(Long id, String nombreExp, String descripcionExp) {
+    public Proyecto(Long id, String nombreProyecto, String descripcionProyecto) {
         this.id = id;
-        this.nombreExp = nombreExp;
-        this.descripcionExp = descripcionExp;
+        this.nombreProyecto = nombreProyecto;
+        this.descripcionProyecto = descripcionProyecto;
     }
-   
+
+
     
 }
