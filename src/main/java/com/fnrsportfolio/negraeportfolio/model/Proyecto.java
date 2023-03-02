@@ -18,14 +18,16 @@ public class Proyecto {
     private String nombreProyecto;
     @Column(columnDefinition = "LONGTEXT")
     private String descripcionProyecto;
+    private String urlProyecto;
 
     public Proyecto() {
     }
 
-    public Proyecto(Long id, String nombreProyecto, String descripcionProyecto) {
+    public Proyecto(Long id, String nombreProyecto, String descripcionProyecto, String urlProyecto) {
         this.id = id;
         this.nombreProyecto = nombreProyecto;
         this.descripcionProyecto = descripcionProyecto;
+        this.urlProyecto = urlProyecto;
     }
 
 
