@@ -10,22 +10,26 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
-public class Educacion {
-
+public class Proyecto {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nombreEdu;
+    private String nombreProyecto;
     @Column(columnDefinition = "LONGTEXT")
-    private String descripcionEdu;
+    private String descripcionProyecto;
+    private String urlProyecto;
 
-    public Educacion() {
+    public Proyecto() {
     }
 
-    public Educacion(Long id, String nombreEdu, String descripcionEdu) {
+    public Proyecto(Long id, String nombreProyecto, String descripcionProyecto, String urlProyecto) {
         this.id = id;
-        this.nombreEdu = nombreEdu;
-        this.descripcionEdu = descripcionEdu;
+        this.nombreProyecto = nombreProyecto;
+        this.descripcionProyecto = descripcionProyecto;
+        this.urlProyecto = urlProyecto;
     }
 
+
+    
 }

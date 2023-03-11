@@ -5,12 +5,12 @@ import java.util.List;
 
 public interface IExpLabService {
 
-        public List<ExpLab> verExperiencia();
+    public List<ExpLab> verExperiencia();
 
-        public void crearExperiencia(ExpLab explab);
+    public void crearExperiencia(ExpLab explab);
 
-        public void borrarExperiencia(Long id);
+    public void borrarExperiencia(Long id);
 
-        public ExpLab buscarExperiencia(Long id);
+    public ExpLab buscarExperiencia(Long id);
     
 }

@@ -1,6 +1,5 @@
 package com.fnrsportfolio.negraeportfolio.model;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,22 +9,21 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
-public class Educacion {
-
+public class HardSkill {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nombreEdu;
-    @Column(columnDefinition = "LONGTEXT")
-    private String descripcionEdu;
+    private String nombreHaSkill;
+    private Long porcentajeHaSkill;
 
-    public Educacion() {
+    public HardSkill() {
     }
 
-    public Educacion(Long id, String nombreEdu, String descripcionEdu) {
+    public HardSkill(Long id, String nombreHaSkill, Long porcentajeHaSkill) {
         this.id = id;
-        this.nombreEdu = nombreEdu;
-        this.descripcionEdu = descripcionEdu;
+        this.nombreHaSkill = nombreHaSkill;
+        this.porcentajeHaSkill = porcentajeHaSkill;
     }
-
+    
 }

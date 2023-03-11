@@ -1,5 +1,6 @@
 package com.fnrsportfolio.negraeportfolio.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,14 +14,15 @@ public class ExpLab {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
     private String nombreExp;
+    @Column(columnDefinition = "LONGTEXT")
     private String descripcionExp;
 
     public ExpLab() {
     }
 
-    public ExpLab(long id, String nombreExp, String descripcionExp) {
+    public ExpLab(Long id, String nombreExp, String descripcionExp) {
         this.id = id;
         this.nombreExp = nombreExp;
         this.descripcionExp = descripcionExp;
