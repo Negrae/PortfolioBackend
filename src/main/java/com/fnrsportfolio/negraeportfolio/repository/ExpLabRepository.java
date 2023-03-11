@@ -1,7 +1,6 @@
 package com.fnrsportfolio.negraeportfolio.repository;
 
 import com.fnrsportfolio.negraeportfolio.model.ExpLab;
-import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
