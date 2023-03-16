@@ -199,17 +199,15 @@ public class Controller {
     }    
     
     @PostMapping ("/educacion/nuevaeducacion")
-    public String agregarEducacion (@RequestBody Educacion educ){
+    public void agregarEducacion (@RequestBody Educacion educ){
     IEducacionService.crearEducacion(educ);
     System.out.println("Se registro una nueva educacion");  
-    return "Se registro una nueva educacion";
     }
  
     @DeleteMapping ("/educacion/borrar/{id}")
-    public String borrarEducacion (@PathVariable Long id){
+    public void borrarEducacion (@PathVariable Long id){
     IEducacionService.borrarEducacion(id);
     System.out.println("Se elimino educacion con ID " + id); 
-    return "Se elimino educacion con ID " + id;
     }
  
     @PutMapping ("/educacion/editar/{id}")
@@ -253,17 +251,15 @@ public class Controller {
     }    
     
     @PostMapping ("/experiencias/nuevaexperiencia")
-    public String agregarExperiencia (@RequestBody ExpLab exp){
+    public void agregarExperiencia (@RequestBody ExpLab exp){
     IExpLabService.crearExperiencia(exp);
     System.out.println("Se registro una nueva experiencia");  
-    return "Se registro una nueva experiencia";
     }
  
     @DeleteMapping ("/experiencias/borrar/{id}")
-    public String borrarExperiencia (@PathVariable Long id){
+    public void borrarExperiencia (@PathVariable Long id){
     IExpLabService.borrarExperiencia(id);
     System.out.println("Se elimino la experiencia con ID " + id); 
-    return "Se elimino la experiencia con ID " + id;
     }
 
         @PutMapping ("/experiencias/editar/{id}")
@@ -287,40 +283,38 @@ public class Controller {
     @Autowired
     private IProyectoService IProyectoService;
 
-    @GetMapping ("/proyecto/{id}")
+    @GetMapping ("/proyectos/{id}")
     public Proyecto buscarProyecto(@PathVariable Long id){
     System.out.println("Se solicito proyecto con ID " + id); 
     return IProyectoService.buscarProyecto(id);
     }
     
-    @GetMapping ("/proyecto/admin")
+    @GetMapping ("/proyectos/admin")
     public Proyecto buscarProyecto(){
     System.out.println("Se solicito proyecto ADMIN"); 
     return IProyectoService.buscarProyecto((long) 1);
     }
     
-    @GetMapping ("/proyecto/verproyectos")
+    @GetMapping ("/proyectos/verproyectos")
     @ResponseBody
     public List<Proyecto> verProyecto () {
     System.out.println("Se solicito la lista proyectos");
     return IProyectoService.verProyecto();
     }    
     
-    @PostMapping ("/proyecto/nuevoproyecto")
-    public String agregarProyecto (@RequestBody Proyecto proy){
+    @PostMapping ("/proyectos/nuevoproyecto")
+    public void agregarProyecto (@RequestBody Proyecto proy){
     IProyectoService.crearProyecto(proy);
     System.out.println("Se registro un nuevo proyecto");  
-    return "Se registro un nuevo proyecto";
     }
  
-    @DeleteMapping ("/proyecto/borrar/{id}")
-    public String borrarProyecto (@PathVariable Long id){
+    @DeleteMapping ("/proyectos/borrar/{id}")
+    public void borrarProyecto (@PathVariable Long id){
     IProyectoService.borrarProyecto(id);
     System.out.println("Se elimino proyecto con ID " + id); 
-    return "Se elimino proyecto con ID " + id;
     }
  
-    @PutMapping ("/proyecto/editar/{id}")
+    @PutMapping ("/proyectos/editar/{id}")
     public Proyecto editarProyecto (@PathVariable Long id, @RequestBody Proyecto proyec) {
         
     Proyecto proy = IProyectoService.buscarProyecto(id);
@@ -342,13 +336,13 @@ public class Controller {
     @Autowired
     private IHardSkillService IHardSkillService;
 
-    @GetMapping ("/hardskill/{id}")
+    @GetMapping ("/hardskills/{id}")
     public HardSkill buscarHardSkill(@PathVariable Long id){
     System.out.println("Se solicito hardskill con ID " + id); 
     return IHardSkillService.buscarHardSkill(id);
     }
     
-    @GetMapping ("/hardskill/admin")
+    @GetMapping ("/hardskills/admin")
     public HardSkill buscarHardSkill(){
     System.out.println("Se solicito hardskills ADMIN"); 
     return IHardSkillService.buscarHardSkill((long) 1);
@@ -361,21 +355,19 @@ public class Controller {
     return IHardSkillService.verHardSkill();
     }    
     
-    @PostMapping ("/hardskill/nuevahardskill")
-    public String agregarHardSkill (@RequestBody HardSkill hard){
+    @PostMapping ("/hardskills/nuevahardskill")
+    public void agregarHardSkill (@RequestBody HardSkill hard){
     IHardSkillService.crearHardSkill(hard);
-    System.out.println("Se registro un nuevo hardskill");  
-    return "Se registro un nuevo hardskill";
+    System.out.println("Se registro un nuevo hardskill");
     }
  
-    @DeleteMapping ("/hardskill/borrar/{id}")
-    public String borrarHardSkill (@PathVariable Long id){
+    @DeleteMapping ("/hardskills/borrar/{id}")
+    public void borrarHardSkill (@PathVariable Long id){
     IHardSkillService.borrarHardSkill(id);
-    System.out.println("Se elimino hardskill con ID " + id); 
-    return "Se elimino hardskill con ID " + id;
+    System.out.println("Se elimino hardskill con ID " + id);
     }
  
-    @PutMapping ("/hardskill/editar/{id}")
+    @PutMapping ("/hardskills/editar/{id}")
     public HardSkill editarHardSkill (@PathVariable Long id, @RequestBody HardSkill hardsk) {
         
     HardSkill hard = IHardSkillService.buscarHardSkill(id);
@@ -396,40 +388,38 @@ public class Controller {
     @Autowired
     private ISoftSkillService ISoftSkillService;
 
-    @GetMapping ("/softskill/{id}")
+    @GetMapping ("/softskills/{id}")
     public SoftSkill buscarSoftSkill(@PathVariable Long id){
     System.out.println("Se solicito softskill con ID " + id); 
     return ISoftSkillService.buscarSoftSkill(id);
     }
     
-    @GetMapping ("/softskill/admin")
+    @GetMapping ("/softskills/admin")
     public SoftSkill buscarSoftSkill(){
     System.out.println("Se solicito softskills ADMIN"); 
     return ISoftSkillService.buscarSoftSkill((long) 1);
     }
     
-    @GetMapping ("/softskill/versoftskills")
+    @GetMapping ("/softskills/versoftskills")
     @ResponseBody
     public List<SoftSkill> verSoftSkill () {
     System.out.println("Se solicito la lista softskill");
     return ISoftSkillService.verSoftSkill();
     }    
     
-    @PostMapping ("/softskill/nuevasoftskill")
-    public String agregarSoftSkill (@RequestBody SoftSkill soft){
+    @PostMapping ("/softskills/nuevasoftskill")
+    public void agregarSoftSkill (@RequestBody SoftSkill soft){
     ISoftSkillService.crearSoftSkill(soft);
     System.out.println("Se registro un nuevo softskill");  
-    return "Se registro un nuevo softskill";
     }
  
-    @DeleteMapping ("/softskill/borrar/{id}")
-    public String borrarSoftSkill (@PathVariable Long id){
+    @DeleteMapping ("/softskills/borrar/{id}")
+    public void borrarSoftSkill (@PathVariable Long id){
     ISoftSkillService.borrarSoftSkill(id);
     System.out.println("Se elimino softskill con ID " + id); 
-    return "Se elimino softskill con ID " + id;
     }
  
-    @PutMapping ("/softskill/editar/{id}")
+    @PutMapping ("/softskills/editar/{id}")
     public SoftSkill editarSoftSkill (@PathVariable Long id, @RequestBody SoftSkill softsk) {
         
     SoftSkill soft = ISoftSkillService.buscarSoftSkill(id);
