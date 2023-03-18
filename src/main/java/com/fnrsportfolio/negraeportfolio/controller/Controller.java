@@ -58,17 +58,15 @@ public class Controller {
     }    
     
     @PostMapping ("/personas/nuevapersona")
-    public String agregarPersona (@RequestBody Persona pers){
+    public void agregarPersona (@RequestBody Persona pers){
     IPersonaService.crearPersona(pers);
-    System.out.println("Se registro una nueva persona");  
-    return "Se registro una nueva persona";
+    System.out.println("Se registro una nueva persona");
     }
  
     @DeleteMapping ("/personas/borrar/{id}")
-    public String borrarPersona (@PathVariable Long id){
+    public void borrarPersona (@PathVariable Long id){
     IPersonaService.borrarPersona(id);
-    System.out.println("Se elimino la persona con ID " + id); 
-    return "Se elimino la persona con ID " + id;
+    System.out.println("Se elimino la persona con ID " + id);
     }
 
         @PutMapping ("/personas/editar/{id}")
@@ -141,17 +139,15 @@ public class Controller {
     }    
     
     @PostMapping ("/contacto/nuevocontacto")
-    public String agregarContacto (@RequestBody Contacto cont){
+    public void agregarContacto (@RequestBody Contacto cont){
     IContactoService.crearContacto(cont);
-    System.out.println("Se registro un nuevo contacto");  
-    return "Se registro un nuevo Contacto";
+    System.out.println("Se registro un nuevo contacto");
     }
  
     @DeleteMapping ("/contacto/borrar/{id}")
-    public String borrarContacto (@PathVariable Long id){
+    public void borrarContacto (@PathVariable Long id){
     IContactoService.borrarContacto(id);
-    System.out.println("Se elimino el contacto con ID " + id); 
-    return "Se elimino el contacto con ID " + id;
+    System.out.println("Se elimino el contacto con ID " + id);
     }
  
     @PutMapping ("/contacto/editar/{id}")
@@ -322,6 +318,7 @@ public class Controller {
     proy.setNombreProyecto(proyec.getNombreProyecto());
     proy.setDescripcionProyecto(proyec.getDescripcionProyecto());
     proy.setUrlProyecto(proyec.getUrlProyecto());
+    proy.setUrlImgProyecto(proyec.getUrlImgProyecto());
     
     IProyectoService.crearProyecto(proy);
     System.out.println("Se modifico el proyecto con ID " + id); 
