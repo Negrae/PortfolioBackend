@@ -345,7 +345,7 @@ public class Controller {
     return IHardSkillService.buscarHardSkill((long) 1);
     }
     
-    @GetMapping ("/hardskill/verhardskills")
+    @GetMapping ("/hardskills/verhardskills")
     @ResponseBody
     public List<HardSkill> verHardSkill () {
     System.out.println("Se solicito la lista hardskill");
