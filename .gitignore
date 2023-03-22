@@ -1,6 +1,6 @@
 HELP.md
 negraeportfolio21del12.rar
-target/
+
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
